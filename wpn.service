@@ -1,0 +1,18 @@
+[Unit]
+Description=WireGuard VPN-d
+#Requires=graphical.target
+#After=graphical.target
+
+#Wants=wpa_supplicant.service
+#After=wpa_supplicant@wlp5s0.service
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sh -c 'until ping -c1 192.168.0.137; do sleep 1; done;'
+#ExecStart=/etc/wireguard/wpn.sh
+ExecStart=/etc/systemd/system/wpn.sh
+
+[Install]
+#WantedBy=graphical.target
+#WantedBy=wpa_supplicant.service
+WantedBy=multi-user.target
