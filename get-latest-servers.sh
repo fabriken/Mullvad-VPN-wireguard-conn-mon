@@ -46,7 +46,6 @@ done <<<"$FIELDS"
 shopt -s nocasematch
 for CODE in "${SERVER_CODES[@]}"; do
 	CONFIGURATION_FILE="/etc/wireguard/mullvad-$CODE.conf"
-	#CONFIGURATION_FILE="/home/odin/wireguard/mullvad-$CODE.conf"
 	[[ -f $CONFIGURATION_FILE ]] || continue
 	while read -r line; do
 		[[ $line =~ ^PrivateKey\ *=\ *([a-zA-Z0-9+/]{43}=)\ *$ ]] && PRIVATE_KEY="${BASH_REMATCH[1]}" && break
