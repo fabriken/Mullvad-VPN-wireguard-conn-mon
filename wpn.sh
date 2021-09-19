@@ -7,7 +7,7 @@
 
 TIME=3
 DEV=eth0
-IP=192.168.0.135
+IP=192.168.0.137
 DIR=/etc/wireguard
 while true
 do
