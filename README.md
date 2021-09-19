@@ -7,6 +7,8 @@ This also runs 'get-latest-servers.sh' to fetch the latest servers.
 
 Or just run ./wpn.sh for temporary use.
 
+# Replace all instances of eth0 and 192.168.0.137 with your NIC and LAN IP address in all of the scripts!
+
 
 if no /etc/wireguard is setup from previous use of wireguard, run ./get-latest-servers.sh to fetch the latest servers.
 
@@ -18,7 +20,7 @@ if your unable to connect, reset your iptables to default by running ./reset-ipt
 Every time a disconnect occurs, the MAC address changes on your NIC for added privacy.
 
 
-Requires macchanger. Install using your favorite distros package manger:
+# Requires macchanger. Install using your favorite distros package manger:
 
 On Arch Linux or Manjaro:
 
