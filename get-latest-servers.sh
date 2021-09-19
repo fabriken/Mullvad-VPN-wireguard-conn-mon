@@ -103,10 +103,10 @@ for CODE in "${SERVER_CODES[@]}"; do
 done
 
 echo "[+] Success."
-#for CODE in "${SERVER_CODES[@]}"; do
-#	echo "- ${SERVER_LOCATIONS["$CODE"]}:"
-#	echo "  \$ wg-quick up mullvad-$CODE"
-#done
+for CODE in "${SERVER_CODES[@]}"; do
+	echo "- ${SERVER_LOCATIONS["$CODE"]}:"
+	echo "  \$ wg-quick up mullvad-$CODE"
+done
 
 echo "Please wait up to 60 seconds for your public key to be added to the servers."
 
