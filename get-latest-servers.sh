@@ -81,13 +81,13 @@ for CODE in "${SERVER_CODES[@]}"; do
 		#PreUp = ufw allow out on %i from any to any
 		#PreUp = sudo ufw allow out from any to ${SERVER_ENDPOINTS["$CODE"]}
 		
-		PreUp = iptables -A OUTPUT -j ACCEPT -d ${SERVER_ENDPOINTS["$CODE"]} -o wlp5s0 -p udp -m udp --dport 51820
+		PreUp = iptables -A OUTPUT -j ACCEPT -d ${SERVER_ENDPOINTS["$CODE"]} -o eth0 -p udp -m udp --dport 51820
 		PreUp = iptables -A OUTPUT -o %i -j ACCEPT
 
 		PreUp = iptables -A OUTPUT -o %i -p tcp --dport 443 -j ACCEPT
 		PreUp = iptables -A OUTPUT -o %i -p tcp --dport 80 -j ACCEPT
 
-		PreDown = iptables -D OUTPUT -j ACCEPT -d ${SERVER_ENDPOINTS["$CODE"]} -o wlp5s0 -p udp -m udp --dport 51820
+		PreDown = iptables -D OUTPUT -j ACCEPT -d ${SERVER_ENDPOINTS["$CODE"]} -o eth0 -p udp -m udp --dport 51820
 		PreDown = iptables -D OUTPUT -o %i -j ACCEPT
 
 		PreDown = iptables -D OUTPUT -o %i -p tcp --dport 443 -j ACCEPT
